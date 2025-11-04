@@ -1,0 +1,32 @@
+.brand {
+    font-family: Inder, monospace;
+    font-size: 1.5rem;
+    color: #FFF;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+nav {
+    display:flex;
+    align-items: center;
+    background-color: #2F8763;
+    padding: 10px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    
+}
+
+.menuIcon {
+    margin-left: auto;
+    width: 50px;
+    height: 50px;
+}
+
+.navItem {
+     margin-left: auto;
+}
