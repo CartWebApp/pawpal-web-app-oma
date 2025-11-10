@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/js/menu.js"></script>
+    <script src="/js/upload.js"></script>
+    <title>Sign Up</title>
+</head>
+<body class="createProfileBody">
+    <nav>
+        <img src="/images/Pawpal.png" alt="Pawpal Logo" class="logo">
+        <p class="brand">PawPal</p>
+        <a class="navItem" href="signUp.html">Sign Up</a>
+        <a class="navItem" href="login.html">Log In</a>
+        <img src="/images/menu.svg" class="menuIcon">
+
+        <!-- Slide-out menu panel -->
+        <div class="menuPanel" aria-hidden="true">
+            <button class="closeMenu" aria-label="Close menu">×</button>
+            <div class="menuLinks">
+                <a href="/html/dashboard.html">Dashboard</a>
+                <a href="/html/contact.html">Contact Us</a>
+                <a href="/html/settings.html">Settings</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="createProfileSection">
+        <h2>Login</h2>
+    <form id="createProfileForm" class="createProfileForm">
+            <section class="formBox">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name">
+
+                <label for="species">Species</label>
+                <input type="text" id="species" name="species">
+
+                <label for="breed">Breed</label>
+                <input type="text" id="breed" name="breed">
+
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age">
+
+                <label for="weight">Weight(lbs)</label>
+                <input type="number" id="weight" name="weight">
+            </section>
+        </form>
+        <section class="profilePictureSection">
+            <div class="uploadProfilePicture">
+                <label for="profilePicture" class="uploadLabel">
+                    <img src="/images/upload.png" alt="Upload" class="uploadIcon">
+                    <input type="file" id="profilePicture" name="profilePicture" accept="image/*" onchange="previewImage(event)" hidden>
+                    <!-- Preview will replace the upload icon; kept inside the label so clicking it re-opens file picker -->
+                    <img id="profilePreview" class="profilePreview" alt="Profile Preview" style="display:none;">
+                </label>
+            </div>
+            <button type="submit" class="createProfileButton" form="createProfileForm">Submit</button>
+        </section>
+    </section>
+</body>
+</html>

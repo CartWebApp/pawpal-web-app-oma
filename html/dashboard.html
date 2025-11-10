@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/js/menu.js"></script>
+    <title>Welcome</title>
+</head>
+<body class="dashboardBody">
+    <nav>
+        <img src="/images/Pawpal.png" alt="Pawpal Logo" class="logo">
+        <p class="brand">PawPal</p>
+        <a class="navItem" href="signUp.html">Sign Up</a>
+        <a class="navItem" href="login.html">Log In</a>
+        <img src="/images/menu.svg" class="menuIcon">
+
+        <!-- Slide-out menu panel -->
+        <div class="menuPanel" aria-hidden="true">
+            <button class="closeMenu" aria-label="Close menu">×</button>
+            <div class="menuLinks">
+                <a href="/html/dashboard.html">Dashboard</a>
+                <a href="/html/contact.html">Contact Us</a>
+                <a href="/html/settings.html">Settings</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="petProfiles">
+        <h2>Pet profiles</h2>
+
+        <section class="profilesList" id="profilesList" aria-live="polite">
+            <!-- Profiles will be rendered here -->
+        </section>
+
+        <script>
+        (function () {
+            const STORAGE_KEY = 'petProfiles';
+
+            // Load profiles from a global variable (if set), or from localStorage, or default empty array
+            function loadProfiles() {
+                if (Array.isArray(window.profiles)) return window.profiles;
+                try {
+                    const raw = localStorage.getItem(STORAGE_KEY);
+                    return raw ? JSON.parse(raw) : [];
+                } catch {
+                    return [];
+                }
+            }
+
+            function saveProfiles(list) {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+            }
+
+            function createCard(profile, index) {
+                const card = document.createElement('article');
+                card.className = 'petCard';
+                const imgSrc = profile.image || '/images/default-pet.png';
+
+                card.innerHTML = `
+                    <img class="petAvatar" src="${imgSrc}" alt="${profile.name || 'Pet'}">
+                    <div class="petInfo">
+                        <h3 class="petName">${escapeHtml(profile.name || 'Unnamed')}</h3>
+                        <p class="petMeta">${escapeHtml(profile.species || '')}${profile.age ? ' • ' + escapeHtml(profile.age) : ''}</p>
+                    </div>
+                    <div class="petActions">
+                        <button class="editBtn" data-index="${index}" aria-label="Edit ${escapeHtml(profile.name || 'pet')}">Edit</button>
+                        <button class="deleteBtn" data-index="${index}" aria-label="Delete ${escapeHtml(profile.name || 'pet')}">Delete</button>
+                    </div>
+                `;
+                return card;
+            }
+
+            function createAddCard() {
+                const a = document.createElement('a');
+                a.className = 'petCard addCard';
+                a.href = '/html/createProfile.html';
+                a.innerHTML = `
+                    <div class="addInner">
+                        <div class="plus">+</div>
+                        <div class="addText">Add profile</div>
+                    </div>
+                `;
+                return a;
+            }
+
+            function render() {
+                const container = document.getElementById('profilesList');
+                container.innerHTML = '';
+                const list = loadProfiles();
+
+                // Add existing profiles
+                list.forEach((p, i) => container.appendChild(createCard(p, i)));
+
+                // Add "Add profile" card
+                container.appendChild(createAddCard());
+
+                // Wire up buttons
+                container.querySelectorAll('.editBtn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const idx = Number(e.currentTarget.dataset.index);
+                        const profiles = loadProfiles();
+                        // store profile to edit and redirect to createProfile.html
+                        localStorage.setItem('editingProfile', JSON.stringify({ index: idx, profile: profiles[idx] }));
+                        window.location.href = '/html/createProfile.html';
+                    });
+                });
+
+                container.querySelectorAll('.deleteBtn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const idx = Number(e.currentTarget.dataset.index);
+                        if (!confirm('Delete this profile?')) return;
+                        const profiles = loadProfiles();
+                        profiles.splice(idx, 1);
+                        saveProfiles(profiles);
+                        render();
+                    });
+                });
+            }
+
+            // Basic HTML-escaping for inserted content
+            function escapeHtml(str) {
+                return String(str)
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#39;');
+            }
+
+            // Initial render
+            render();
+
+            // Expose refresh method for other scripts if needed
+            window.refreshPetProfiles = render;
+        })();
+        </script>
+    </section>
+</body>
+</html>
