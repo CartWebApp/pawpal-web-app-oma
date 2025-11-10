@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/js/menu.js"></script>
+    <script src="/js/createReminder.js"></script>
+    <title>Welcome</title>
+</head>
+<body class="signUpBody">
+    <nav>
+        <img src="/images/Pawpal.png" alt="Pawpal Logo" class="logo">
+        <p class="brand">PawPal</p>
+        <a class="navItem" href="#signUp">Sign Up</a>
+        <a class="navItem" href="#login">Log In</a>
+        <img src="/images/menu.svg" class="menuIcon" aria-label="Open menu" aria-expanded="false">
+        
+        <!-- Slide-out menu panel -->
+        <div class="menuPanel" aria-hidden="true">
+            <button class="closeMenu" aria-label="Close menu">×</button>
+            <div class="menuLinks">
+                <a href="/html/dashboard.html">Dashboard</a>
+                <a href="/html/contact.html">Contact Us</a>
+                <a href="/html/settings.html">Settings</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="createReminderSection">
+        <h2>Create a Reminder</h2>
+        <form class="createReminderForm">
+            <section class="formBox">
+                <label for="title">Reminder Title</label>
+                <input type="text" id="title" name="title" required>
+                <label for="pet">Pet (optional)</label>
+                <select id="pet" name="pet">
+                    <option value="">None</option>
+                </select>
+                <label for="reminderDate">Date/Time</label>
+                <input type="datetime-local" id="reminderDate" name="reminderDate" required>
+                <label for="details">Details</label>
+                <textarea id="details" name="details" required rows="8"></textarea> 
+            </section>
+            <button type="submit" class="createReminderButton">Create Reminder</button>
+        </form>
+    </section>
+</body>
+</html>

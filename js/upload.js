@@ -99,8 +99,10 @@ function previewImage(event) {
         }
 
         // --- Profiles storage helpers ---
-        const PROFILES_KEY = 'pawpal_profiles';
-        const SELECTED_KEY = 'pawpal_selected_profile';
+    const PROFILES_KEY = 'pawpal_profiles';
+    const SELECTED_KEY = 'pawpal_selected_profile';
+    // Default image used when user doesn't upload one
+    const DEFAULT_IMG = '/images/default-pet.png';
 
         function getProfiles() {
             try {
@@ -167,6 +169,9 @@ function previewImage(event) {
             const hasPreview = preview && preview.src && preview.style.display !== 'none';
 
             function saveAndFinish() {
+                // Ensure a default image is stored when none was uploaded or previewed
+                if (!profile.image) profile.image = DEFAULT_IMG;
+
                 try {
                     saveProfile(profile);
                 } catch (err) {
@@ -199,6 +204,7 @@ function previewImage(event) {
                 profile.image = preview.src;
                 saveAndFinish();
             } else {
+                // No file and no preview - save will apply the default image inside saveAndFinish
                 saveAndFinish();
             }
         });

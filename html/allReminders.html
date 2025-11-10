@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles.css">
     <script src="/js/menu.js"></script>
-    <script src="/js/login.js"></script>
-    <title>Sign Up</title>
+    <script src="/js/allReminders.js"></script>
+    <title>Pet Profiles - PawPal</title>
 </head>
-<body class="signUpBody">
+<body class="dashboardBody">
     <nav>
         <img src="/images/Pawpal.png" alt="Pawpal Logo" class="logo">
         <p class="brand">PawPal</p>
@@ -27,18 +27,11 @@
         </div>
     </nav>
 
-    <section class="signUpSection">
-        <h2>Login</h2>
-        <form class="signUpForm">
-            <section class="formBox">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
-
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            </section>
-            <button type="submit" class="signUpButton">Login</button>
-        </form>
+    <section class="allReminders">
+        <h2>All Reminders</h2>
+        <div id="allRemindersList">
+            <!-- Reminders will be rendered here -->
+        </div>
     </section>
 </body>
 </html>

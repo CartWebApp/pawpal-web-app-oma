@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/js/menu.js"></script>
+    <script src="/js/profile.js"></script>
+    <title>Sign Up</title>
+</head>
+<body class="createProfileBody">
+    <nav>
+        <img src="/images/Pawpal.png" alt="Pawpal Logo" class="logo">
+        <p class="brand">PawPal</p>
+        <a class="navItem" href="signUp.html">Sign Up</a>
+        <a class="navItem" href="login.html">Log In</a>
+        <img src="/images/menu.svg" class="menuIcon">
+
+        <!-- Slide-out menu panel -->
+        <div class="menuPanel" aria-hidden="true">
+            <button class="closeMenu" aria-label="Close menu">×</button>
+            <div class="menuLinks">
+                <a href="/html/dashboard.html">Dashboard</a>
+                <a href="/html/contact.html">Contact Us</a>
+                <a href="/html/settings.html">Settings</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="profileInfoSection">
+        <h2>Profile</h2>
+        <section class="profileInfo">
+            <div class="profileRow">
+            <label>Name</label>
+            <div id="nameDisplay" class="profileValue">—</div>
+            </div>
+            <div class="profileRow">
+                <label>Species</label>
+                <div id="speciesDisplay" class="profileValue">—</div>
+            </div>
+            <div class="profileRow">
+                <label>Breed</label>
+                <div id="breedDisplay" class="profileValue">—</div>
+            </div>
+            <div class="profileRow">
+                <label>Age</label>
+                <div id="ageDisplay" class="profileValue">—</div>
+            </div>
+            <div class="profileRow">
+                <label>Weight (lbs)</label>
+                <div id="weightDisplay" class="profileValue">—</div>
+            </div>
+        </section>
+        
+        <section class="profilePictureSection">
+                <img id="profileImage" class="profilePreview" alt="Profile Image" src="/images/default-pet.png">
+        </section>
+    </section>
+</body>
+</html>

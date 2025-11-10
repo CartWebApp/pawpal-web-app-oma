@@ -302,14 +302,203 @@ nav {
     padding: 0;
 }
 
+/* Dashboard profile cards */
+.petProfiles {
+    background-color: #529E80;
+    margin: 1%;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.petProfiles h2 {
+    color: white;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
 .profilesList {
     background-color: #529E80;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: flex-start;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.petCard {
+    background: #6cd87a;
+    border-radius: 10px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    color: white;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.petCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.petAvatar {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+    border: 3px solid white;
+}
+
+.petName {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.addCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    text-decoration: none;
+    background: #0361C4;
+}
+
+.plus {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.addText {
+    font-size: 1.2rem;
+}
+
+/* Icons for profile cards */
+.petCard {
+    position: relative; /* For absolute positioning of icons */
+}
+
+.profileIcon {
+    position: absolute;
+    top: 10px;
+    width: 24px;
+    height: 24px;
+    background: rgba(20, 102, 143, 0.5);
+    border-radius: 50%;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.editIcon {
+    right: 10px;
+}
+
+.deleteIcon {
+    left: 10px;
+}
+
+.profileIcon:hover {
+    background: rgba(0, 0, 0, 0.7);
+    transform: scale(1.1);
+}
+
+/* SVG icons are white */
+.profileIcon svg {
+    fill: white;
+    width: 16px;
+    height: 16px;
+}
+
+/* Upcoming Reminders Section */
+.upcomingReminders {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #529E80;
+    margin: 1%;
+    border-radius: 10px;
     padding: 20px;
 }
+
+#remindersList {
+    background-color: #6cd87a;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+/* Reminder cards displayed on dashboard */
+#remindersList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.reminderCard {
+    background: #ffffff;
+    color: #002070;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.reminderTitle {
+    margin: 0 0 6px 0;
+    font-size: 1.2rem;
+}
+
+.reminderMeta {
+    margin: 0 0 8px 0;
+    font-size: 0.95rem;
+    color: #004a2e;
+}
+
+.reminderDetails {
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+/*reminder button*/
+.reminderButtons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.reminderButtons a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: white;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #0361C4;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    margin: 10px;
+}
+
+.upcomingReminders h2 {
+    flex-basis: 100%;
+    color: white;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
 
 /*createProfile.html*/
 /*background*/
@@ -364,7 +553,7 @@ nav {
     background-color: #0361C4;
     border-radius: 10px;
     margin-top: 2rem;
-    padding: 1.2rem;
+    padding: 1.5rem;
     width: 50%;
 }
 
@@ -386,4 +575,142 @@ nav {
 
 .uploadProfilePicture .profilePreview {
     display: none; /* shown after selecting a file */
+}
+
+/* Ensure profile preview images used elsewhere (profile page) are circular and fit layout */
+.profilePreview {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    border: 3px solid white;
+}
+
+/*createReminder.html*/
+.createReminderSection {
+    align-items: center;
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.createReminderForm {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.createReminderSection h2, .createReminderForm label {
+    font-size: 2rem;
+    font-weight: 400;
+    color: white;
+    margin-top: 1rem;
+}
+
+.createReminderForm label:first-of-type {
+    margin-top: 0;
+}
+
+.createReminderForm input, .createReminderForm textarea, .createReminderForm select {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 2px solid #002070;
+    margin-top: 0.5rem;
+}
+
+.createReminderButton {
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #0361C4;
+    border-radius: 10px;
+    margin-top: 2rem;
+    padding: 1.2rem;
+    width: 50%;
+    align-self: center;
+}
+
+/*allReminders.html*/
+.allReminders {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #529E80;
+    margin: 1%;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.allReminders h2 {
+    color: white;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+#allRemindersList {
+    width: 100%;
+    background-color: #6cd87a;
+    padding: 8px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    gap: 12px;
+}
+
+/*profile.html*/
+.profileInfoSection h2 {
+    flex-basis: 100%;
+    text-align: center;
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.profileInfoSection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    margin: 1%;
+}
+
+.profileInfo {
+    width: 50%;
+}
+
+.profileInfo * {
+    background: #63CD67;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.profileInfoSection h2, .profileInfo label {
+    text-shadow:rgba(0, 0, 0, 0.25) 0 4px 4px;
+    font-size: 2rem;
+    font-weight: 400;
+    color: white;
+    margin-top: 1rem;
+}
+
+.profileInfo label:first-of-type {
+    margin-top: 0;
+}
+
+.profileInfo div {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 2px solid #002070;
+    margin-top: 0.5rem;
+}
+
+.profileInfo div div {
+    background: white;
 }
