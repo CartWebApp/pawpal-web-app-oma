@@ -56,5 +56,31 @@
                 <img id="profileImage" class="profilePreview" alt="Profile Image" src="/images/default-pet.png">
         </section>
     </section>
+
+    <section class="activityLogSection">
+        <h2>Activity Log</h2>
+        <a href="logActivity.html">Log activity</a>
+
+        <section class="recentActivitySection">
+            <h2>Recent Activity</h2>
+            <div class="recentActivity">
+                <!-- Recent activity entries will be populated here -->
+            </div>
+            <a href="allActivity.html">View all</a>
+        </section>
+
+        <section class="petRemindersSection">
+            <h2>Pet Reminders</h2>
+            <div id="profileRemindersList">
+                <!-- Reminders for this profile will be rendered here -->
+            </div>
+            <a href="petReminders.html">View all</a>
+        </section>
+
+        <section class="graphSection">
+            <h2>Weekly Walk Summary</h2>
+            <canvas id="walkChart" width="700" height="320" aria-label="Weekly walk summary chart" role="img"></canvas>
+        </section>
+    </section>
 </body>
 </html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/js/menu.js"></script>
+    <script src="/js/allActivity.js"></script>
+    <title>Pet Profiles - PawPal</title>
+</head>
+<body class="dashboardBody">
+    <nav>
+        <img src="/images/Pawpal.png" alt="Pawpal Logo" class="logo">
+        <p class="brand">PawPal</p>
+        <a class="navItem" href="signUp.html">Sign Up</a>
+        <a class="navItem" href="login.html">Log In</a>
+        <img src="/images/menu.svg" class="menuIcon">
+
+        <!-- Slide-out menu panel -->
+        <div class="menuPanel" aria-hidden="true">
+            <button class="closeMenu" aria-label="Close menu">×</button>
+            <div class="menuLinks">
+                <a href="/html/dashboard.html">Dashboard</a>
+                <a href="/html/contact.html">Contact Us</a>
+                <a href="/html/settings.html">Settings</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="allActivityLogs">
+        <h2>All Activity</h2>
+        <a id="backToProfile" class="backButton" href="/html/profile.html" aria-label="Back to profile">
+            <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+            </svg>
+        </a>
+        <div id="allActivityLogsList">
+            <!-- Activity logs will be rendered here -->
+        </div>
+    </section>
+</body>
+</html>

@@ -667,7 +667,7 @@ nav {
 .profileInfoSection h2 {
     flex-basis: 100%;
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: white;
     margin-bottom: 30px;
 }
@@ -676,12 +676,19 @@ nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: center;
     padding: 20px;
     margin: 1%;
 }
 
 .profileInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
     width: 50%;
+    background-color: #529E80;
+    border-radius: 10px;
 }
 
 .profileInfo * {
@@ -707,10 +714,215 @@ nav {
     font-size: 1.2rem;
     padding: 0.5rem;
     border-radius: 5px;
-    border: 2px solid #002070;
     margin-top: 0.5rem;
 }
 
 .profileInfo div div {
     background: white;
+    border: 2px solid #002070;
+}
+
+.activityLogSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "header logButton"
+        "recentActivity reminders"
+        "graph graph";
+    gap: 20px;
+    background-color: #2F4A7C;
+    padding: 1%;
+}
+
+.activityLogSection h2 {
+    grid-area: header;
+    color: white;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.activityLogSection a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: white;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #0361C4;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    grid-area: logButton;
+    align-self: center;
+    justify-self: center;
+}
+
+.recentActivitySection, .petRemindersSection, .graphSection {
+    background-color: #529E80;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.recentActivitySection {
+    grid-area: recentActivity;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.petRemindersSection {
+    grid-area: reminders;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#profileRemindersList, .recentActivity {
+    background-color: #6cd87a;
+    padding: 8px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.graphSection {
+    grid-area: graph;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.graphSection canvas {
+    width: 80%;
+    max-width: 100%;
+    height: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/*logActivity.html*/
+.logActivitySection {
+    align-items: center;
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.logActivityForm {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.logActivitySection h2, .logActivityForm label {
+    font-size: 2rem;
+    font-weight: 400;
+    color: white;
+    margin-top: 1rem;
+}
+
+.logActivityForm label:first-of-type {
+    margin-top: 0;
+}
+
+.logActivityForm input, .logActivityForm textarea, .logActivityForm select {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 2px solid #002070;
+    margin-top: 0.5rem;
+}
+
+.logActivityButton {
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #0361C4;
+    border-radius: 10px;
+    margin-top: 2rem;
+    padding: 1.2rem;
+    width: 50%;
+    align-self: center;
+}
+
+/*petReminders.html*/
+.allPetReminders {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #529E80;
+    margin: 1%;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.allPetReminders h2 {
+    flex-basis: 95%;
+    color: white;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+#allPetRemindersList {
+    width: 100%;
+    background-color: #6cd87a;
+    padding: 8px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.backButton {
+    flex-basis: 5%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 6px;
+    text-decoration: none;
+    margin-bottom: 12px;
+}
+.backButton svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
+}
+
+/*allActivity.html*/
+.allActivityLogs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #529E80;
+    margin: 1%;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.allActivityLogs h2 {
+    flex-basis: 95%;
+    color: white;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+#allActivityLogsList {
+    width: 100%;
+    background-color: #6cd87a;
+    padding: 8px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
