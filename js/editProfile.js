@@ -69,7 +69,7 @@
             console.warn('Profile not found for id', profileId);
             // Optionally show a message to the user
             // redirect after short delay
-            setTimeout(function () { window.location.href = '/html/dashboard.html'; }, 800);
+            setTimeout(function () { window.location.href = '/dashboard.html'; }, 800);
             return;
         }
 
@@ -109,7 +109,7 @@
                 saveProfiles(profiles);
                 alert('Profile updated');
                 // go back to dashboard after a short delay
-                setTimeout(function () { window.location.href = '/html/dashboard.html'; }, 600);
+                setTimeout(function () { window.location.href = '/dashboard.html'; }, 600);
             }
 
             if (file) {

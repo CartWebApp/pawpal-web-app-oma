@@ -6,6 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function (e) {
         e.preventDefault();
         // In the future you can validate credentials here.
-        window.location.href = '/html/dashboard.html';
+        window.location.href = '/dashboard.html';
     });
 });

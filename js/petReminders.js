@@ -77,7 +77,7 @@
       back.addEventListener('click', function (ev) {
         // ensure selected id is set (it should be already)
         try { localStorage.setItem(SELECTED_KEY, selProfile.id); } catch {}
-        // allow normal navigation to /html/profile.html
+        // allow normal navigation to /profile.html
       });
     }
 

@@ -34,7 +34,7 @@
             const profileId = getSelectedProfileId();
             if (!profileId) {
                 alert('No profile selected. Please open a profile and log activity from there.');
-                window.location.href = '/html/dashboard.html';
+                window.location.href = '/dashboard.html';
                 return;
             }
 
@@ -57,7 +57,7 @@
             alert('Activity logged');
             form.reset();
             // go back to profile page for the current pet
-            window.location.href = '/html/profile.html';
+            window.location.href = '/profile.html';
         });
     });
 })();

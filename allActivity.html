@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles.css">
     <script src="/js/menu.js"></script>
-    <script src="/js/allReminders.js"></script>
+    <script src="/js/allActivity.js"></script>
     <title>Pet Profiles - PawPal</title>
 </head>
 <body class="dashboardBody">
@@ -20,17 +20,22 @@
         <div class="menuPanel" aria-hidden="true">
             <button class="closeMenu" aria-label="Close menu">×</button>
             <div class="menuLinks">
-                <a href="/html/dashboard.html">Dashboard</a>
-                <a href="/html/contact.html">Contact Us</a>
-                <a href="/html/settings.html">Settings</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="settings.html">Settings</a>
             </div>
         </div>
     </nav>
 
-    <section class="allReminders">
-        <h2>All Reminders</h2>
-        <div id="allRemindersList">
-            <!-- Reminders will be rendered here -->
+    <section class="allActivityLogs">
+        <h2>All Activity</h2>
+        <a id="backToProfile" class="backButton" href="profile.html" aria-label="Back to profile">
+            <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+            </svg>
+        </a>
+        <div id="allActivityLogsList">
+            <!-- Activity logs will be rendered here -->
         </div>
     </section>
 </body>

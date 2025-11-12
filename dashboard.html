@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles.css">
     <script src="/js/menu.js"></script>
-    <script src="/js/allActivity.js"></script>
+    <script src="/js/dashboard.js"></script>
     <title>Pet Profiles - PawPal</title>
 </head>
 <body class="dashboardBody">
@@ -20,22 +20,28 @@
         <div class="menuPanel" aria-hidden="true">
             <button class="closeMenu" aria-label="Close menu">×</button>
             <div class="menuLinks">
-                <a href="/html/dashboard.html">Dashboard</a>
-                <a href="/html/contact.html">Contact Us</a>
-                <a href="/html/settings.html">Settings</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="settings.html">Settings</a>
             </div>
         </div>
     </nav>
 
-    <section class="allActivityLogs">
-        <h2>All Activity</h2>
-        <a id="backToProfile" class="backButton" href="/html/profile.html" aria-label="Back to profile">
-            <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
-                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-            </svg>
-        </a>
-        <div id="allActivityLogsList">
-            <!-- Activity logs will be rendered here -->
+    <section class="petProfiles">
+        <h2>Pet profiles</h2>
+        <div class="profilesList" id="profilesList" aria-live="polite">
+            <!-- Profiles will be rendered here -->
+        </div>
+    </section>
+
+    <section class="upcomingReminders">
+        <h2>Upcoming Reminders</h2>
+        <div id="remindersList">
+            <!-- Reminders will be rendered here -->
+        </div>
+        <div class="reminderButtons">
+            <a href="allReminders.html">View All</a>
+            <a href="createReminder.html">Create a Reminder</a>
         </div>
     </section>
 </body>
